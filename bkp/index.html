@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titti 3D</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header>
+    <img src="img/logo.png" alt="Logo de Titti 3D" class="logo" />
+    <nav>
+      <ul class="menu-principal">
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+      </ul>
+      <ul class="menu-contacto">
+        <li><a href="#contacto">Contacto</a></li>
+        <li id="carrito-icon">🛒 <span id="contador-carrito">0</span></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="galeria">
+      <h2 data-aos="fade-up">Galería</h2>
+      <div class="galeria-grid">
+        <img src="img/ejemplo1.jpg" alt="Ejemplo 1" class="galeria-item">
+        <img src="img/ejemplo2.jpg" alt="Ejemplo 2" class="galeria-item">
+      </div>
+    </section>
+
+    <section id="tienda">
+      <h2 data-aos="fade-up">Tienda</h2>
+      <div class="productos">
+        <div class="producto" data-aos="zoom-in">
+          <h3>Producto 1</h3>
+          <p>Descripción del producto.</p>
+          <button onclick="agregarAlCarrito('Producto 1')">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-aos="zoom-in">
+          <h3>Producto 2</h3>
+          <p>Descripción del producto.</p>
+          <button onclick="agregarAlCarrito('Producto 2')">Añadir al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2 data-aos="fade-up">Contacto</h2>
+      <form onsubmit="enviarFormulario(event)">
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo" required />
+        <textarea rows="5" placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+        <p id="mensaje-formulario"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Titti 3D. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span id="cerrar-lightbox">✖</span>
+    <img id="imagen-lightbox" src="" alt="Imagen ampliada">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
+
